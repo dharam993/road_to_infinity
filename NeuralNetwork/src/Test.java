@@ -27,15 +27,14 @@ public class Test {
 			  for(int i = 0; i < 1000 ; i ++) {
 				  Input data = inputs.get((int)Math.floor(Math.random() * 4));
 				  nn.train(data.inputs, data.output);
-				  System.out.println(nn.feedForward(inputs.get(0).inputs));
 			  }
 			  
 			  //predict output
-			  double[] input_features = {0, 1};
+			  double[] input_features = {0, 0};
 			  nn.feedForward(input_features);
-			  double[] result = Matrix.toArray(output_layer.getOutput());
+			  double[] result = Matrix.toArray(nn.output_layer.getOutput());
 			  for(int i = 0; i< result.length; i ++)
-				  System.out.println(result[i]);
+				  System.out.println("output is :" + result[i]);
 			}
 	
 	
